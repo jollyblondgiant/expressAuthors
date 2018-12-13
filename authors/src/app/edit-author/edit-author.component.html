@@ -1,0 +1,18 @@
+<button [routerLink]="['/show']" >Home</button>  
+
+
+<h2>
+  Edit This Author:
+</h2>
+
+<form (submit)="updateAuthor()">
+   | <input [(ngModel)]="editAuthor.name" placeholder="{{thisAuthor.name}}" name="editAuthor.name"> | 
+    <button [routerLink]="['/show']" >Cancel</button> | 
+    <input type="submit" class="btn btn-primary" value="Submit"> |
+  </form>
+
+  <div id="errors" *ngIf="this.seeErrors" >
+    
+      <h3>Author's name must be at least 3 characters long</h3>
+    
+  </div>

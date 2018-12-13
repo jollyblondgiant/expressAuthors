@@ -1,0 +1,19 @@
+<a [routerLink]="['/show']" >Home</a> 
+<p>
+  Add a new author:
+</p>
+
+<form (submit)="addAuthor()">
+ | <input [(ngModel)]="newAuthor.name" placeholder="Author Name" name="newAuthor.name"> | 
+  <button [routerLink]="['/show']" >Cancel</button> | 
+  <input type="submit" class="btn btn-primary" value="Submit"> |
+</form>
+
+<h4 *ngIf="successmessage">Author added!</h4>
+
+<div id="errors" *ngIf="this.seeErrors" >
+    
+    <h3>Author's name must be at least 3 characters long</h3>
+  
+</div>
+<button [routerLink]="['/show']" *ngIf="successmessage">Back to Home</button> 
